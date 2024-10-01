@@ -1,0 +1,246 @@
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 130px;  /* Set width */
+    height: auto;  /* Set height */
+    display: block; /* Ensure it behaves as a block-level element */
+    margin: 0 auto; /* Center the logo */
+    padding-bottom: 10px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #3644af; /* Background color */
+}
+
+/* Header Section */
+.site-header {
+    width: 100%;
+    height: auto; /* Allow dynamic height */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items */
+    position: fixed;
+    top: 0;
+    background-color: transparent; /* Transparent background */
+    z-index: 1000;
+    padding: 20px; /* Space around the header */
+}
+
+/* Top Bar for Date */
+.top-bar {
+    font-family: Arial, sans-serif;
+    padding: 5px; /* Reduced padding */
+    background-color: transparent; /* Slightly transparent background for the date */
+    text-align: center; /* Center text */
+    width: 100%; /* Full width */
+    font-size: 0.65rem; /* Minimized text size */
+    color: white;
+    font-weight: 400;
+    letter-spacing: .05em;
+}
+
+/* Hamburger Icon */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 25px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1006; /* Highest z-index when menu is closed */
+    display: block;
+    color: white;
+}
+
+.hamburger-menu.active {
+    z-index: 1000; /* Lower when menu is open */
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.4s ease;
+    
+}
+
+/* Full-Screen Menu */
+.full-screen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%; /* Take up only 25% of the screen */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Slight transparency */
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start; /* Adjusted to top */
+    z-index: 1000;
+    padding: 20px;
+    flex-direction: column; /* Ensure content stacks vertically */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Styling for the ul in the menu */
+.full-screen-menu ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    margin-top: 40px; /* Space above the first list */
+    line-height: 30px;
+}
+
+/* Space between the two ul elements */
+.full-screen-menu ul + ul {
+    margin-top: 10px;
+}
+
+/* Individual list item spacing */
+.full-screen-menu ul li {
+    margin: 10px 0; /* Reduced space between items */
+}
+
+/* Menu link styling */
+.full-screen-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem; /* Smaller font size for menu links */
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for menu links */
+.full-screen-menu ul li a:hover {
+    color: #f1c40f; /* Change to yellow on hover */
+}
+
+/* Close Menu Button */
+.close-menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 25px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+}
+
+.close-menu-btn.active {
+    z-index: 1007;
+    display: block;
+}
+
+/* Styling the spans inside the close button */
+.close-menu-btn span {
+    display: block;
+    height: 2px;
+    background-color: white; /* Make it white */
+    margin: 5px 0;
+    transition: all 0.4s ease;
+}
+
+/* Close Button Active (X Animation) */
+.close-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.close-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.close-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Hamburger Icon Active (X Animation) */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Full-Screen Menu Active */
+.full-screen-menu.active {
+    transform: translateX(0);
+}
+
+/* Sections */
+.section1 {
+    background-image: url('images/Background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    filter: brightness(75%); /* Dim the background image to 95% */
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+/* Divider */
+.divider {
+    height: 2px;
+    background-color: black;
+    width: 100%;
+}
+
+/* Search bar styles */
+.search-field {
+    padding: 8px 12px; /* Reduced padding */
+    min-width: 45%; /* Decrease minimum width */
+    font-size: 0.875rem; /* Smaller font size */
+    line-height: 1.5em;
+    color: #373D41;
+    background-color: #FFF;
+    border: 1px solid #C5C5C7;
+    border-radius: 6px;
+    flex-grow: 1;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-submit {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    outline: 0;
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 0.875rem; /* Smaller font size */
+    border-radius: 6px;
+    border-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.search-form {
+    margin: 10px 0; /* Reduced margin for less space */
+}
